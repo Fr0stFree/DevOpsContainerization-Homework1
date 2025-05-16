@@ -19,6 +19,11 @@ services:
     networks:
       - default
     restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
 
   nginx:
     container_name: nginx
@@ -35,7 +40,13 @@ services:
     networks:
       - default
     restart: always
-    
+    environment:
+      - VUE_APP_API_URL=/api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/momo-store/index.html"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
 
 volumes:
   static:
