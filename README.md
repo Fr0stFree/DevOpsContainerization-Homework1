@@ -51,18 +51,12 @@ It includes:
 
 ## Quick Start
 
-1. **Set up environment variables:**  
-   Create a `.env` file based on `.env.example` and set your Docker Hub username:
+1. **Build and run all services:**
    ```
-   DOCKER_REGISTRY=your_dockerhub_username
-   ```
-
-2. **Build and run all services:**
-   ```
-   docker compose up --build
+   DOCKER_REGISTRY=frostfree docker compose up --build
    ```
 
-3. **Access the application:**
+2. **Access the application:**
    - Frontend: [http://localhost/momo-store/](http://localhost/momo-store/)
    - Backend API: [http://localhost/api/](http://localhost/api/)
 
